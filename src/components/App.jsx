@@ -4,7 +4,7 @@ import data from "../sample_data.json";
 
 function App() {
 QuestionNum = 0
-  return <div className="app"> <Question Q= {data[0].}/> </div>;
+  return <div className="app"> <Question Q= {data[0].question.text}/> </div>;
 
  
 }
