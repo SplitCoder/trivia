@@ -4,9 +4,22 @@ import data from "../sample_data.json";
 
 function App() {
 QuestionNum = 0
-  return <div className="app"> <Question Q= {data[0].question.text}/> 
-  <Nextquestion/> </div>;
+CorrectAnswer = "Question is not answered"
+let [ correctAnswer, SetcorrectAnswer ] = useState(0);
+let [ isAnswered, SetisAnswered ] = useState(false);
 
+if (isAnswered == false) {
+ 
+
+} else {
+
+
+}
+
+
+  return <div className="app"> <Question Q= {data[0].question.text}/> 
+  <Nextquestion/> <br/><button onClick={() => SetisAnswered(true)}>Click for the correcty answer </button> <br/>{CorrectAnswer}</div>;
+  
  
 }
 
@@ -17,10 +30,11 @@ function Question (props){
   <div classname=
   "Questions">
     <div className="app"> {props.Q}  </div>
-    <Answer A= {data[0].question.choices[0]}/>
+    
 {
-choice= question.choices
-question.choices.map((choice)=>{return… render your answer here })
+
+  data[0].question.choices.map((choice)=> 
+  {return <Answer A={choice}/>})
 }
 
   </div>
@@ -39,4 +53,9 @@ function Answer (props){
     {props.A}
   </div>
   );
+}
+
+function CorrectAnswer (){
+ 
+  
 }
