@@ -3,16 +3,16 @@ import "../css/App.css";
 import data from "../sample_data.json";
 
 function App() {
-QuestionNum = 0
-CorrectAnswer = "Question is not answered"
+// let [ questionNum, SetquestionNum ] = useState
+  QuestionNum = data[0]
 let [ correctAnswer, SetcorrectAnswer ] = useState(0);
 let [ isAnswered, SetisAnswered ] = useState(false);
 
 if (isAnswered == false) {
- 
+  CorrectAnswer = "Question is not answered"
 
 } else {
-//CorrectAnswer = "The Correct Answer is"
+CorrectAnswer = "The Correct Answer is " + data[0].question.correct_choice_index
 
 }
 
@@ -44,6 +44,9 @@ function Question (props){
 function Nextquestion (){
   return(
     <button>Next Question</button>
+
+
+    
   );
 }
 
@@ -53,9 +56,4 @@ function Answer (props){
     {props.A}
   </div>
   );
-}
-
-function CorrectAnswer (){
- 
-  
 }
